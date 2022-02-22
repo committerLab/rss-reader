@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="Ahmed ABERWAG" id="001-create-channel-table.xml">
+        <createTable tableName="channel">
+            <column name="channel_id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="channel_title" type="VARCHAR(255)" />
+            <column name="channel_link" type="VARCHAR(255)" />
+            <column name="channel_description_type" type="VARCHAR(20)" />
+            <column name="channel_description_value" type="TEXT" />
+            <column name="channel_published_at" type="DATETIME" />
+            <column name="channel_updated_at" type="DATETIME" />
+        </createTable>
+        <rollback>
+            <dropTable tableName="channel"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="Ahmed ABERWAG" id="001-create-rss-table.xml">
+        <createTable tableName="feed">
+            <column name="feed_id" type="INT">
+                <constraints primaryKey="true" />
+            </column>
+            <column name="feed_link" type="VARCHAR(255)" />
+            <column name="feed_name" type="VARCHAR(255)" />
+            <column name="feed_type" type="VARCHAR(10)" />
+            <column name="feed_language" type="VARCHAR(6)" />
+            <column name="feed_channel_id" type="INT" />
+        </createTable>
+        <addForeignKeyConstraint baseTableName="feed"
+                                 baseColumnNames="feed_channel_id"
+                                 constraintName="fk_feed_channel_id"
+                                 referencedTableName="channel"
+                                 referencedColumnNames="channel_id" />
+        <rollback>
+            <dropTable tableName="feed" />
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

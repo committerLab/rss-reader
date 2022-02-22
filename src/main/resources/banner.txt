@@ -1,0 +1,15 @@
+
+  _____     _____    _____            _____    ______              _____    ______   _____
+ |  __ \   / ____|  / ____|          |  __ \  |  ____|     /\     |  __ \  |  ____| |  __ \
+ | |__) | | (___   | (___    ______  | |__) | | |__       /  \    | |  | | | |__    | |__) |
+ |  _  /   \___ \   \___ \  |______| |  _  /  |  __|     / /\ \   | |  | | |  __|   |  _  /
+ | | \ \   ____) |  ____) |          | | \ \  | |____   / ____ \  | |__| | | |____  | | \ \
+ |_|  \_\ |_____/  |_____/           |_|  \_\ |______| /_/    \_\ |_____/  |______| |_|  \_\
+
+
+version               : '${application.version}'
+formatted-version     : '${application.formatted-version}'
+version               : '${spring-boot.version}'
+formatted-version     : '${spring-boot.formatted-version}'
+title                 : '${application.title}'
+
