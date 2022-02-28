@@ -1,21 +1,30 @@
 package fr.committer.tech.rssreader.model;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.sql.Timestamp;
-import java.util.Set;
+import java.util.List;
 
-@Data
-@Entity(name = "channel")
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "channel")
 public class ChannelEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,11 +37,23 @@ public class ChannelEntity {
     @Column(name = "channel_link")
     private String link;
 
-    @Column(name = "channel_description_type")
-    private String descriptionType;
+    @Column(name = "channel_type")
+    private String type;
 
-    @Column(name = "channel_description_value")
-    private String descriptionValue;
+    @Column(name = "channel_encoding")
+    private String encoding;
+
+    @Column(name = "channel_author")
+    private String author;
+
+    @Column(name = "channel_copyright")
+    private String copyright;
+
+    @Column(name = "channel_language")
+    private String language;
+
+    @Column(name = "channel_description")
+    private String description;
 
     @Column(name = "channel_published_at")
     private Timestamp publishedAt;
@@ -40,6 +61,7 @@ public class ChannelEntity {
     @Column(name = "channel_updated_at")
     private Timestamp updatedAt;
 
-    @OneToMany(mappedBy = "channel")
-    private Set<FeedEntity> feeds;
+    @OneToMany(mappedBy = "channel", fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<FeedEntity> feeds;
 }
