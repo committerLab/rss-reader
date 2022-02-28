@@ -7,25 +7,26 @@ import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.XmlReader;
 import fr.committer.tech.rssreader.model.ChannelEntity;
 import fr.committer.tech.rssreader.model.FeedEntity;
-import fr.committer.tech.rssreader.model.RssChannel;
-import fr.committer.tech.rssreader.model.RssItem;
 import fr.committer.tech.rssreader.repository.ChannelRepository;
 import fr.committer.tech.rssreader.repository.FeedRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
+@RequiredArgsConstructor
 public class RssReaderService {
-    @Autowired
-    private ChannelRepository channelRepository;
 
-    @Autowired
-    private FeedRepository feedRepository;
+    private final ChannelRepository channelRepository;
+
+    private final FeedRepository feedRepository;
 
     public Iterable<FeedEntity> getFeeds(){
         return feedRepository.findAll();
@@ -35,33 +36,27 @@ public class RssReaderService {
         return channelRepository.findAll();
     }
 
-    public RssChannel getClient(String url) throws IOException, FeedException {
+    public ChannelEntity addChannel(String url) {
+        return channelRepository.findByLink(url).orElseGet(() -> {
+            try {
+                XmlReader reader = new XmlReader(new URL(url));
+                SyndFeed feed = new SyndFeedInput().build(reader);
+                ChannelEntity channel = ChannelEntity.builder()
+                        .title(feed.getTitle())
+                        .link(url)
+                        .type(feed.getFeedType())
+                        .encoding(feed.getEncoding())
+                        .description(feed.getDescription())
+                        .author(feed.getAuthor())
+                        .copyright(feed.getCopyright())
+                        .language(feed.getLanguage())
+                        .build();
 
-        XmlReader reader = new XmlReader(new URL(url));
-        SyndFeed feed = new SyndFeedInput().build(reader);
-        System.out.println(feed.getPublishedDate());
-        RssChannel.RssChannelBuilder channelBuilder = RssChannel.builder()
-                .title(feed.getTitle())
-                .link(feed.getLink())
-                .feedType(feed.getFeedType())
-                .encoding(feed.getEncoding())
-                .uri(feed.getUri())
-                .description(feed.getDescription())
-                .author(feed.getAuthor())
-                .copyright(feed.getCopyright())
-                .language(feed.getLanguage());
-        List<RssItem> rssItems = new ArrayList<>();
-        for (SyndEntry entry : feed.getEntries()) {
-            rssItems.add(
-                    RssItem.builder()
-                            .title(entry.getTitle())
-                            .description(entry.getDescription())
-                            .pubDate(entry.getPublishedDate())
-                            .link(entry.getLink())
-                            .comments(entry.getComments())
-                            .build());
-        }
-
-        return channelBuilder.items(rssItems).build();
+                return channelRepository.save(channel);
+            } catch (FeedException | IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        });
     }
 }
