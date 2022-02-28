@@ -1,22 +1,30 @@
 package fr.committer.tech.rssreader.model;
 
-import fr.committer.tech.rssreader.entity.Channel;
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.Collection;
-import java.util.Set;
+import java.util.Date;
 
-@Data
-@Entity(name = "feed")
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "feed")
 public class FeedEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,8 +34,20 @@ public class FeedEntity {
     @Column(name = "feed_link")
     private String link;
 
-    @Column(name = "feed_name")
-    private String name;
+    @Column(name = "feed_title")
+    private String title;
+
+    @Column(name = "feed_description_type")
+    private String descriptionType;
+
+    @Column(name = "feed_description_value")
+    private String descriptionValue;
+
+    @Column(name = "feed_pub_date")
+    private Date pubDate;
+
+    @Column(name = "feed_comments")
+    private String comments;
 
     @Column(name = "feed_type")
     private String type;
@@ -35,7 +55,8 @@ public class FeedEntity {
     @Column(name = "feed_language")
     private String language;
 
-    @ManyToOne
-    @JoinColumn(name = "feed_channel_id", referencedColumnName = "channel_id")
-    private Channel channel;
+    @ManyToOne(fetch= FetchType.LAZY)
+    @JoinColumn(name = "feed_channel_id")
+    @JsonBackReference
+    private ChannelEntity channel;
 }
