@@ -1,6 +1,5 @@
 package fr.committer.tech.rssreader.service;
 
-import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.FeedException;
 import com.rometools.rome.io.SyndFeedInput;
@@ -16,9 +15,6 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -28,12 +24,12 @@ public class RssReaderService {
 
     private final FeedRepository feedRepository;
 
-    public Iterable<FeedEntity> getFeeds(){
-        return feedRepository.findAll();
+    public Page<FeedEntity> getFeeds(Pageable pageable){
+        return feedRepository.findAll(pageable);
     }
 
-    public Iterable<ChannelEntity> getChannel(){
-        return channelRepository.findAll();
+    public Page<ChannelEntity> getChannel(Pageable pageable){
+        return channelRepository.findAll(pageable);
     }
 
     public ChannelEntity addChannel(String url) {

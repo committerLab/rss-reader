@@ -5,6 +5,8 @@ import fr.committer.tech.rssreader.model.ChannelEntity;
 import fr.committer.tech.rssreader.model.FeedEntity;
 import fr.committer.tech.rssreader.service.RssReaderService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -26,13 +28,13 @@ public class ClientController {
 
     @RequestMapping(value = "/feed")
     @ResponseBody
-    public Iterable<FeedEntity> getFeeds(){
-        return rssReaderService.getFeeds();
+    public Page<FeedEntity> getFeeds(Pageable pageable){
+        return rssReaderService.getFeeds(pageable);
     }
 
     @RequestMapping(value = "/channel")
     @ResponseBody
-    public Iterable<ChannelEntity> getChannel(){
-        return rssReaderService.getChannel();
+    public Page<ChannelEntity> getChannel(Pageable pageable){
+        return rssReaderService.getChannel(pageable);
     }
 }
