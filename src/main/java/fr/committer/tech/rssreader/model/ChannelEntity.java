@@ -61,6 +61,9 @@ public class ChannelEntity {
     @Column(name = "channel_updated_at")
     private Timestamp updatedAt;
 
+    @Column(name = "channel_last_run_at")
+    private Timestamp lastRunAt;
+
     @OneToMany(mappedBy = "channel", fetch = FetchType.LAZY)
     @JsonManagedReference
     private List<FeedEntity> feeds;

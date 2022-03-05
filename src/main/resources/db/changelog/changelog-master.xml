@@ -6,4 +6,6 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd">
 
     <include file="/db/changelog/changes/001-create-tables.xml" />
+    <include file="/db/changelog/changes/002-add-channels.xml" />
+    <include file="/db/changelog/changes/003-add-column-for-quartz.xml" />
 </databaseChangeLog>
