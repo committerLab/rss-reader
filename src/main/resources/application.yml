@@ -1,15 +1,20 @@
 spring:
   liquibase:
     change-log: "classpath:/db/changelog/changelog-master.xml"
-    drop-first: true
-  jpa:
-    show-sql: true
+#    drop-first: true
+#  jpa:
+#    show-sql: true
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
     password: postgres
-#Quartz
+  task:
+    execution:
+      pool:
+        max-size: 16
+        queue-capacity: 100
 fr:
   committer:
-    job:
-      frequency: PT1M
+    task:
+      frequency: PT10M
+      retryLimit: 5

@@ -4,4 +4,7 @@ import fr.committer.tech.rssreader.model.FeedEntity;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface FeedRepository extends PagingAndSortingRepository<FeedEntity, Integer> {
+
+    Boolean existsByLink(String link);
+
 }

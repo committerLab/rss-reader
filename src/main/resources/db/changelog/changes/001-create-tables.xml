@@ -14,11 +14,14 @@
             <column name="channel_type" type="VARCHAR(255)" />
             <column name="channel_encoding" type="VARCHAR(255)" />
             <column name="channel_author" type="VARCHAR(255)" />
-            <column name="channel_copyright" type="VARCHAR(255)" />
+            <column name="channel_copyright" type="TEXT" />
             <column name="channel_language" type="VARCHAR(255)" />
-            <column name="channel_description" type="VARCHAR(255)" />
+            <column name="channel_description" type="TEXT" />
             <column name="channel_published_at" type="DATETIME" defaultValueComputed="NOW()" />
             <column name="channel_updated_at" type="DATETIME" defaultValueComputed="NOW()" />
+            <column name="channel_last_run_at" type="DATETIME" />
+            <column name="channel_next_run_at" type="DATETIME" />
+            <column name="channel_count_run_error" type="INT" defaultValue="0" />
         </createTable>
         <rollback>
             <dropTable tableName="channel"/>

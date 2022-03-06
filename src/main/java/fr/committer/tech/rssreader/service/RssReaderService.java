@@ -1,5 +1,6 @@
 package fr.committer.tech.rssreader.service;
 
+import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.FeedException;
 import com.rometools.rome.io.SyndFeedInput;
@@ -9,13 +10,19 @@ import fr.committer.tech.rssreader.model.FeedEntity;
 import fr.committer.tech.rssreader.repository.ChannelRepository;
 import fr.committer.tech.rssreader.repository.FeedRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class RssReaderService {
@@ -34,25 +41,69 @@ public class RssReaderService {
 
     public ChannelEntity addChannel(String url) {
         return channelRepository.findByLink(url).orElseGet(() -> {
-            try {
-                XmlReader reader = new XmlReader(new URL(url));
-                SyndFeed feed = new SyndFeedInput().build(reader);
-                ChannelEntity channel = ChannelEntity.builder()
-                        .title(feed.getTitle())
-                        .link(url)
-                        .type(feed.getFeedType())
-                        .encoding(feed.getEncoding())
-                        .description(feed.getDescription())
-                        .author(feed.getAuthor())
-                        .copyright(feed.getCopyright())
-                        .language(feed.getLanguage())
-                        .build();
-
+            ChannelEntity channel = getChannelInfo(url);
+            if (channel != null) {
                 return channelRepository.save(channel);
-            } catch (FeedException | IOException e) {
-                e.printStackTrace();
             }
             return null;
         });
+    }
+
+    public List<FeedEntity> getChannelFeeds(String channelLink) {
+        SyndFeed feed = getSyndFeed(channelLink);
+        List<FeedEntity> feeds = new ArrayList<>();
+        if (feed != null) {
+            log.info("find {} feed", feed.getEntries().size());
+            for (SyndEntry entry : feed.getEntries()) {
+                feeds.add(
+                        FeedEntity.builder()
+                                .link(entry.getLink())
+                                .title(entry.getTitle())
+                                .descriptionType((entry.getDescription() != null) ? entry.getDescription().getType() : null)
+                                .descriptionValue((entry.getDescription() != null) ? entry.getDescription().getValue() : null)
+                                .pubDate(entry.getPublishedDate())
+                                .comments(entry.getComments())
+                                .language((entry.getSource() != null) ? entry.getSource().getLanguage(): null)
+                                .type((entry.getSource() != null) ? entry.getSource().getFeedType() : null)
+                                .build());
+            }
+            return feeds;
+        }
+        return null;
+    }
+
+    public ChannelEntity getChannelInfo(String channelLink) {
+        SyndFeed feed = getSyndFeed(channelLink);
+        if (feed != null) {
+            return ChannelEntity.builder()
+                    .title(feed.getTitle())
+                    .link(channelLink)
+                    .type(feed.getFeedType())
+                    .encoding(feed.getEncoding())
+                    .description(feed.getDescription())
+                    .author(feed.getAuthor())
+                    .copyright(feed.getCopyright())
+                    .language(feed.getLanguage())
+                    .build();
+        }
+        return null;
+    }
+
+    public SyndFeed getSyndFeed(String url) {
+        try {
+            XmlReader reader = new XmlReader(new URL(url));
+            return new SyndFeedInput().build(reader);
+        } catch (FeedException | IOException | IllegalArgumentException e) {
+            log.error(e.getMessage(), e);
+        }
+        return null;
+    }
+
+    public Optional<ChannelEntity> queueForUpdateInfoTask(Date date, Integer retryLimit) {
+        return channelRepository.findFirstByNextRunAtBeforeAndCountRunErrorLessThanOrderByNextRunAtAsc(date, retryLimit);
+    }
+
+    public Optional<ChannelEntity> queueForUpdateFeedTask(Date date, Integer retryLimit) {
+        return channelRepository.findFirstByNextRunAtBeforeAndCountRunErrorLessThanOrderByNextRunAtAsc(date, retryLimit);
     }
 }

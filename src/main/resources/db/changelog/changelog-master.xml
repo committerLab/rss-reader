@@ -7,5 +7,4 @@
 
     <include file="/db/changelog/changes/001-create-tables.xml" />
     <include file="/db/changelog/changes/002-add-channels.xml" />
-    <include file="/db/changelog/changes/003-add-column-for-quartz.xml" />
 </databaseChangeLog>

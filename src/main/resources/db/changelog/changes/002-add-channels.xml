@@ -46,8 +46,6 @@
         <insert tableName="channel"><column name="channel_link">https://feeds2.feedburner.com/TheNextWeb</column></insert>
         <insert tableName="channel"><column name="channel_link">https://feeds.nature.com/nature/rss/current</column></insert>
         <insert tableName="channel"><column name="channel_link">https://news.ycombinator.com/rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://oglaf.com/feeds/rss/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.awkwardzombie.com/awkward.php</column></insert>
         <insert tableName="channel"><column name="channel_link">https://www.androidpolice.com/feed/</column></insert>
         <insert tableName="channel"><column name="channel_link">https://feeds.searchengineland.com/searchengineland</column></insert>
         <insert tableName="channel"><column name="channel_link">https://feeds.gawker.com/kotaku/full</column></insert>
@@ -64,10 +62,6 @@
         <insert tableName="channel"><column name="channel_link">https://www.smashingmagazine.com/feed/</column></insert>
         <insert tableName="channel"><column name="channel_link">https://www.entrepreneur.com/topic/marketing.rss</column></insert>
         <insert tableName="channel"><column name="channel_link">https://m.signalvnoise.com/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.reddit.com/r/technology/.rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.reddit.com/r/worldnews/top/.rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.reddit.com/r/Games/top/.rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.reddit.com/r/AskCulinary/.rss</column></insert>
         <insert tableName="channel"><column name="channel_link">https://www.buzzfeed.com/tasty.xml</column></insert>
         <insert tableName="channel"><column name="channel_link">https://martinfowler.com/feed.atom</column></insert>
         <insert tableName="channel"><column name="channel_link">https://feeder.co/blog.rss</column></insert>
@@ -169,11 +163,7 @@
         <insert tableName="channel"><column name="channel_link">https://www.secureworks.com/resources/blog/research/feed/</column></insert>
         <insert tableName="channel"><column name="channel_link">https://www.sei.cmu.edu/news/customcf/news-rss.cfm?newsrss=</column></insert>
         <insert tableName="channel"><column name="channel_link">https://volatility-labs.blogspot.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://community.rapid7.com/view-browse-feed.jspa?userID=-1&amp;browseSite=content&amp;filterID=all~objecttype~objecttype[blogpost]&amp;browseViewID=content</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.reddit.com/r/netsec/.rss</column></insert>
         <insert tableName="channel"><column name="channel_link">https://security.stackexchange.com/feeds/week</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.reddit.com/r/ReverseEngineering/.rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.reddit.com/r/computerforensics/.rss</column></insert>
         <insert tableName="channel"><column name="channel_link">https://crypto.stackexchange.com/feeds/month</column></insert>
         <insert tableName="channel"><column name="channel_link">https://www.securelist.com/en/rss/alerts</column></insert>
         <insert tableName="channel"><column name="channel_link">https://seclists.org/rss/cert.rss</column></insert>
@@ -202,7 +192,6 @@
         <insert tableName="channel"><column name="channel_link">https://technet.microsoft.com/en-us/security/rss/comprehensive</column></insert>
         <insert tableName="channel"><column name="channel_link">https://www.microsoft.com/security/portal/rss/toplist3rss.aspx</column></insert>
         <insert tableName="channel"><column name="channel_link">https://feeds2.feedburner.com/carnegiemelloncylab</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.reddit.com/r/vrd/.rss</column></insert>
         <insert tableName="channel"><column name="channel_link">https://www.us-cert.gov/ncas/alerts.xml</column></insert>
         <insert tableName="channel"><column name="channel_link">https://usa.visa.com/rss/merchants/cisp-all.rss</column></insert>
         <insert tableName="channel"><column name="channel_link">https://threatpost.com/feed</column></insert>

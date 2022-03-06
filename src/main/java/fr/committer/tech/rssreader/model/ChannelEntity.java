@@ -64,7 +64,17 @@ public class ChannelEntity {
     @Column(name = "channel_last_run_at")
     private Timestamp lastRunAt;
 
+    @Column(name = "channel_next_run_at")
+    private Timestamp nextRunAt;
+
+    @Column(name = "channel_count_run_error")
+    private Integer countRunError;
+
     @OneToMany(mappedBy = "channel", fetch = FetchType.LAZY)
     @JsonManagedReference
     private List<FeedEntity> feeds;
+
+    public void incrementCountRunError() {
+        this.countRunError += 1;
+    }
 }
