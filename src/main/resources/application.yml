@@ -18,3 +18,19 @@ fr:
     task:
       frequency: PT10M
       retryLimit: 5
+
+server:
+  port: 8443
+  # keytool -genkeypair -alias rss-reader -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore rss-reader.p12 -validity 3650
+  # keytool -genkeypair -alias rss-reader -keyalg RSA -keysize 2048 -keystore rss-reader.jks -validity 3650
+  # keytool -importkeystore -srckeystore rss-reader.jks -destkeystore rss-reader.p12 -deststoretype pkcs12
+  ssl:
+    enabled: true
+    # The format used for the keystore. It could be set to JKS in case it is a JKS file
+    key-store-type: PKCS12
+    # The path to the keystore containing the certificate
+    key-store: classpath:keystore/rss-reader.p12
+    # The password used to generate the certificate
+    key-store-password: pwd-rss-reader
+    # The alias mapped to the certificate
+    key-alias: rss-reader
