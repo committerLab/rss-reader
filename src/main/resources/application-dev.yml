@@ -1,0 +1,19 @@
+logging:
+  level:
+    fr:
+      committer: debug
+
+spring:
+  jpa:
+    show-sql: false
+
+server:
+  port: 9090
+  ssl:
+    enabled: false
+
+fr:
+  committer:
+    task:
+      frequency: PT1M
+      retryLimit: 50

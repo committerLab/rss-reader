@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <databaseChangeLog
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
-    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet author="Ahmed ABERWAG" id="001-create-channel-table.xml">
         <createTable tableName="channel">
@@ -12,15 +10,20 @@
                 <constraints primaryKey="true"/>
             </column>
             <column name="channel_title" type="VARCHAR(255)" />
-            <column name="channel_link" type="VARCHAR(255)" />
+            <column name="channel_link" type="VARCHAR(255)" >
+                <constraints unique="true" />
+            </column>
             <column name="channel_type" type="VARCHAR(255)" />
             <column name="channel_encoding" type="VARCHAR(255)" />
             <column name="channel_author" type="VARCHAR(255)" />
-            <column name="channel_copyright" type="VARCHAR(255)" />
+            <column name="channel_copyright" type="TEXT" />
             <column name="channel_language" type="VARCHAR(255)" />
-            <column name="channel_description" type="VARCHAR(255)" />
-            <column name="channel_published_at" type="DATETIME" />
-            <column name="channel_updated_at" type="DATETIME" />
+            <column name="channel_description" type="TEXT" />
+            <column name="channel_published_at" type="DATETIME" defaultValueComputed="NOW()" />
+            <column name="channel_updated_at" type="DATETIME" defaultValueComputed="NOW()" />
+            <column name="channel_last_run_at" type="DATETIME" />
+            <column name="channel_next_run_at" type="DATETIME" />
+            <column name="channel_count_run_error" type="INT" defaultValue="0" />
         </createTable>
         <rollback>
             <dropTable tableName="channel"/>
@@ -36,11 +39,11 @@
             <column name="feed_title" type="VARCHAR(255)" />
             <column name="feed_description_type" type="VARCHAR(255)" />
             <column name="feed_description_value" type="TEXT" />
-            <column name="feed_pub_date" type="DATETIME" />
             <column name="feed_comments" type="VARCHAR(255)" />
             <column name="feed_type" type="VARCHAR(10)" />
             <column name="feed_language" type="VARCHAR(6)" />
             <column name="feed_channel_id" type="INT" />
+            <column name="feed_pub_date" type="DATETIME" />
         </createTable>
         <addForeignKeyConstraint baseTableName="feed"
                                  baseColumnNames="feed_channel_id"
