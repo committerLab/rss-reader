@@ -10,7 +10,9 @@
                 <constraints primaryKey="true"/>
             </column>
             <column name="channel_title" type="VARCHAR(255)" />
-            <column name="channel_link" type="VARCHAR(255)" />
+            <column name="channel_link" type="VARCHAR(255)" >
+                <constraints unique="true" />
+            </column>
             <column name="channel_type" type="VARCHAR(255)" />
             <column name="channel_encoding" type="VARCHAR(255)" />
             <column name="channel_author" type="VARCHAR(255)" />

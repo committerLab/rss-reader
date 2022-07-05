@@ -34,40 +34,38 @@ public class ScheduledTasks {
     @Value("${fr.committer.task.retryLimit}")
     private Integer retryLimit;
 
-    @Scheduled(fixedRate = 10000)
+    @Scheduled(fixedDelay = 60000)
     public void updateChannelInfo() {
-        Long count = channelRepository.countByNextRunAtBeforeAndCountRunErrorLessThanOrderByNextRunAtAsc(new Date(), retryLimit);
-        log.info("Task in queue info update: {} with frequency {}", count, frequency);
+        Long count = channelRepository.countByNextRunAtBeforeAndCountRunErrorLessThanOrNextRunAtIsNullOrderByNextRunAtAsc(new Date(), retryLimit);
+        log.info("Task in update CHANNEL info queue: {} with frequency {}", count, frequency);
 
-        rssReaderService.queueForUpdateInfoTask(new Date(), retryLimit)
-                .ifPresent(channelForJob -> {
-                    log.info("run task for: {} - {} with link {}", channelForJob.getId(), channelForJob.getTitle(), channelForJob.getLink());
+        rssReaderService.topForUpdateInfoTask(new Date(), retryLimit)
+                .forEach(channelForJob -> {
+                    log.debug("run task for channel: {} with link {}", channelForJob.getId(), channelForJob.getLink());
 
                     ChannelEntity channelInfo = rssReaderService.getChannelInfo(channelForJob.getLink());
                     if (channelInfo == null) {
                         postponeTaskWithError(channelForJob);
                     } else {
                         ChannelEntity saved = channelRepository.save(updateChannelFields(channelForJob, channelInfo));
-                        log.info("Channel {} updated", saved.getId());
+                        log.debug("Channel {} updated", saved.getTitle());
                     }
                 });
     }
 
-    @Scheduled(fixedRate = 10000)
+    @Scheduled(fixedDelay = 6000)
     public void getChannelFeeds() {
         Long count = channelRepository.countByNextRunAtBeforeAndCountRunErrorLessThanOrderByNextRunAtAsc(new Date(), retryLimit);
-        log.info("Task in queue feed update: {} with frequency {}", count, frequency);
+        log.info("Task in update FEED queue: {} with frequency {}", count, frequency);
         rssReaderService.queueForUpdateFeedTask(new Date(), retryLimit)
-                .ifPresent(channel -> {
-                    log.info("Get Feed for channel {} - {}", channel.getTitle(), channel.getId());
-                    List<FeedEntity> feeds = rssReaderService.getChannelFeeds(channel.getLink());
+                .forEach(channel -> {
+                    log.debug("Get Feed for channel {} - {}", channel.getTitle(), channel.getId());
+                    List<FeedEntity> feeds = rssReaderService.getChannelFeeds(channel);
                     if (feeds != null) {
                         postponeTask(channel);
                         channel.setFeeds(feeds);
                         feeds.forEach(feedEntity -> {
-                            if(feedRepository.existsByLink(feedEntity.getLink())) {
-                                log.debug("Feed {} already stored", feedEntity.getLink());
-                            } else {
+                            if(!feedRepository.existsByLink(feedEntity.getLink())) {
                                 feedRepository.save(feedEntity);
                             }
                         });

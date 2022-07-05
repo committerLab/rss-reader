@@ -49,11 +49,11 @@ public class RssReaderService {
         });
     }
 
-    public List<FeedEntity> getChannelFeeds(String channelLink) {
-        SyndFeed feed = getSyndFeed(channelLink);
+    public List<FeedEntity> getChannelFeeds(ChannelEntity channel) {
+        SyndFeed feed = getSyndFeed(channel.getLink());
         List<FeedEntity> feeds = new ArrayList<>();
         if (feed != null) {
-            log.info("find {} feed", feed.getEntries().size());
+            log.debug("find {} feed", feed.getEntries().size());
             for (SyndEntry entry : feed.getEntries()) {
                 feeds.add(
                         FeedEntity.builder()
@@ -63,6 +63,7 @@ public class RssReaderService {
                                 .descriptionValue((entry.getDescription() != null) ? entry.getDescription().getValue() : null)
                                 .pubDate(entry.getPublishedDate())
                                 .comments(entry.getComments())
+                                .channel(channel)
                                 .language((entry.getSource() != null) ? entry.getSource().getLanguage(): null)
                                 .type((entry.getSource() != null) ? entry.getSource().getFeedType() : null)
                                 .build());
@@ -100,10 +101,14 @@ public class RssReaderService {
     }
 
     public Optional<ChannelEntity> queueForUpdateInfoTask(Date date, Integer retryLimit) {
-        return channelRepository.findFirstByNextRunAtBeforeAndCountRunErrorLessThanOrderByNextRunAtAsc(date, retryLimit);
+        return channelRepository.findFirstByNextRunAtBeforeAndCountRunErrorLessThanOrNextRunAtIsNullOrderByNextRunAtAsc(date, retryLimit);
     }
 
-    public Optional<ChannelEntity> queueForUpdateFeedTask(Date date, Integer retryLimit) {
-        return channelRepository.findFirstByNextRunAtBeforeAndCountRunErrorLessThanOrderByNextRunAtAsc(date, retryLimit);
+    public List<ChannelEntity> topForUpdateInfoTask(Date date, Integer retryLimit) {
+        return channelRepository.findTop20ByNextRunAtBeforeAndCountRunErrorLessThanOrNextRunAtIsNullOrderByNextRunAtAsc(date, retryLimit);
+    }
+
+    public List<ChannelEntity> queueForUpdateFeedTask(Date date, Integer retryLimit) {
+        return channelRepository.findTop20ByNextRunAtBeforeAndCountRunErrorLessThanOrderByNextRunAtAsc(date, retryLimit);
     }
 }

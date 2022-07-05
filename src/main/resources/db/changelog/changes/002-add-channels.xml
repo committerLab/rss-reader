@@ -5,203 +5,567 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet author="Ahmed ABERWAG" id="002-add-channels.xml">
-        <insert tableName="channel"><column name="channel_link">https://java.developpez.com/index/rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.journaldunet.com/rss/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.zdnet.fr/feeds/rss/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.generation-nt.com/export/rss.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.keepitsimple.fr/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.jetbrains.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://xkcd.com/atom.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://css-tricks.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.bbci.co.uk/news/rss.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.bbci.co.uk/news/world/rss.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.hanselman.com/ScottHanselman</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://rss.slashdot.org/Slashdot/slashdot</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.engadget.com/rss.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://rss.cnn.com/rss/cnn_topstories.rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.nytimes.com/services/xml/rss/nyt/HomePage.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.nytimes.com/services/xml/rss/nyt/Business.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.reuters.com/reuters/topNews</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.reuters.com/Reuters/worldNews</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.reuters.com/reuters/technologyNews</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.reuters.com/reuters/businessNews</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.mashable.com/Mashable</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.giantitp.com/comics/oots.rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.theverge.com/rss/index.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.polygon.com/rss/index.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.vox.com/rss/index.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.arstechnica.com/arstechnica/index/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.wired.com/wired/index</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.gawker.com/lifehacker/full</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.smbc-comics.com/rss.php</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.dumbingofage.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.lemonde.fr/rss/une.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://sethgodin.typepad.com/seths_blog/atom.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.macrumors.com/MacRumors-All</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.npr.org/rss/rss.php?id=1001</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.gawker.com/gizmodo/full</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://cucumber.gigidigi.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.howtogeek.com/HowToGeek</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://thepunchlineismachismo.com/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds2.feedburner.com/TheNextWeb</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.nature.com/nature/rss/current</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://news.ycombinator.com/rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.androidpolice.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.searchengineland.com/searchengineland</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.gawker.com/kotaku/full</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.humblebundle.com/rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://contentmarketinginstitute.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://krebsonsecurity.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.schneier.com/blog/atom.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.hubspot.com/marketing/rss.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://waitbutwhy.com/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.gunnerkrigg.com/rss.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.paranatural.net/rss.php</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://nakedsecurity.sophos.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feedpress.me/mozblog</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.smashingmagazine.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.entrepreneur.com/topic/marketing.rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://m.signalvnoise.com/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.buzzfeed.com/tasty.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://martinfowler.com/feed.atom</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeder.co/blog.rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.arcfn.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/blogspot/gJZg</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.extremetech.com/category/computing/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blogs.technet.com/b/ad/privaterss.aspx</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/codinghorror</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://techblog.netflix.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.eff.org/rss/updates.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.trailofbits.com/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://addxorrol.blogspot.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.imperialviolet.org/iv-rss.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.cognitivedissidents.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://research.kudelskisecurity.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://adsecurity.org/?feed=rss2</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://room362.com/index.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.cmpxchg8b.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.corelan.be/index.php/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://idoneous-security.blogspot.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.daemon-security.com/rss2.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://pevma.blogspot.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.uncommonsensesecurity.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://storyinmemo.com/?feed=rss2</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/Liquidmatrix</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.devttys0.com/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.canbushack.com/blog/index.php?tempskin=_atom</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/pauldotcom/XBIC</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.daemonology.net/blog/index.rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.dragonsector.pl/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.jeffbsecurity.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/SteveGibsonsBlog</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://raidersec.blogspot.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.informationisbeautiful.net/blog/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/GustavoDuarte</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.pentestgeek.com/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/schneier/fulltext</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.trailofbits.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://repret.wordpress.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/IrongeeksSecuritySite</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.securitybistro.com/?feed=rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.erratasec.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://ifsec.blogspot.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.skullsecurity.org/blog/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.lvh.io/rss.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://security.blogoverflow.com/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.willhackforsushi.com/?feed=rss2</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.softwaresprogramming.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://carnal0wnage.attackresearch.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.hexblog.com/?feed=rss2</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.commandlinekungfu.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://console-cowboys.blogspot.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.kahusecurity.com/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/chrisbrenton/VcDP</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://chargen.matasano.com/atom.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://dankaminsky.com/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://skizzlesec.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://googleprojectzero.blogspot.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.dkbza.org/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://postmodernsecurity.com/category/blog-posts/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/Moserware</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/RaffysComputerSecurityBlog</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.veracode.com/blog/category/all-things-security/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://nvisium.com/blog/feed.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://spot.incubator.apache.org/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds2.feedburner.com/zscaler/research</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/tenable/qaXL</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.zimperium.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/WhitehatSecurityBlog</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blogs.technet.com/b/bluehat/rss.aspx</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://ics.sans.org/blog/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.phantom.us/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://community.rapid7.com/community/metasploit/blog/feeds/posts</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.azimuthsecurity.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.cloudflare.com/rss/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.sans.org/cloud/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.elastic.co/blog/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://community.arubanetworks.com/aruba/rss/board?board.id=tech-blog</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://cyber-defense.sans.org/blog/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://researchcenter.paloaltonetworks.com/unit42/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.securityonion.net/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.veracode.com/blog/category/infographics/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://pen-testing.sans.org/blog/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/GoogleOnlineSecurityBlog</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.shadowserver.org/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://insights.sei.cmu.edu/devops/rss.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.securelist.com/en/rss/blog</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://isc.sans.edu/rssfeed_full.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blogs.bromium.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://casecurity.org/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.hashicorp.com/feed.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blogs.technet.com/b/trustworthycomputing/rss.aspx</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.veracode.com/blog/category/research/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.kismetwireless.net/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.trustedsec.com/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.bro-ids.org/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blog.ioactive.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.secureworks.com/resources/blog/research/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.sei.cmu.edu/news/customcf/news-rss.cfm?newsrss=</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://volatility-labs.blogspot.com/feeds/posts/default</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://security.stackexchange.com/feeds/week</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://crypto.stackexchange.com/feeds/month</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.securelist.com/en/rss/alerts</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://seclists.org/rss/cert.rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://the-parallax.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://code.google.com/feeds/p/google-security-research/issueupdates/basic</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://seclists.org/rss/microsoft.rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://seclists.org/rss/pen-test.rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.cisecurity.org/feed/advisories</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://bitcoin.stackexchange.com/feeds/month</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://networkengineering.stackexchange.com/feeds/month</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feed.ipspace.net/blog/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://networkjutsu.com/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://unix.stackexchange.com/feeds/month</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://powerupyourprompt.com/feed.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://tools.ietf.org/html/new-rfcs.rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.securelist.com/en/rss/analysis</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.trendmicro.com/Anti-MalwareBlog</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://lifehacker.com/tag/security/rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://rss.packetstormsecurity.com/news/tags/hacker/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://fortune.com/tag/cyber-security/feed/</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/Threatgeek</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.microsoft.com/security/news/rss.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://krebsonsecurity.com/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/HOTforSecurity</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://secunia.com/blog_rss/blog.rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://technet.microsoft.com/en-us/security/rss/comprehensive</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.microsoft.com/security/portal/rss/toplist3rss.aspx</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds2.feedburner.com/carnegiemelloncylab</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.us-cert.gov/ncas/alerts.xml</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://usa.visa.com/rss/merchants/cisp-all.rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://threatpost.com/feed</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blogs.technet.com/b/srd/rss.aspx</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://usa.visa.com/rss/merchants/cisp-alerts.rss</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://www.iss.net/rss.php</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://technet.microsoft.com/en-us/security/rss/advisory</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://blogs.technet.com/b/msrc/rss.aspx?Redirected=true</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.feedburner.com/threattracksecurity</column></insert>
-        <insert tableName="channel"><column name="channel_link">https://feeds.arstechnica.com/arstechnica/security</column></insert>
+        <validCheckSum>ANY</validCheckSum>
+        <sql><![CDATA[INSERT INTO channel (channel_link) values
+                                        ('https://feeds.feedburner.com/bhmag'),
+                                        ('https://feeds.feedburner.com/ConseilConfig'),
+                                        ('https://feeds.feedburner.com/cowcotland'),
+                                        ('https://www.01net.com/rss/info/flux-rss/flux-toutes-les-actualites/'),
+                                        ('https://www.abondance.com/actualites/feed'),
+                                        ('https://www.actuia.com/feed/'),
+                                        ('https://www.clubic.com/articles.rss'),
+                                        ('https://www.cnetfrance.fr/feeds/rss/'),
+                                        ('https://www.commentcamarche.net/forum/actualites-high-tech-8?fmt=rss'),
+                                        ('https://www.configspc.com/feed/'),
+                                        ('https://www.autotitre.com/rss/actu.rss'),
+                                        ('https://www.caradisiac.com/rss.xml'),
+                                        ('https://www.lequipe.fr/rss/actu_rss.xml'),
+                                        ('https://www.matchendirect.fr/rss/info.xml'),
+                                        ('https://aujourdhui.ma/feed'),
+                                        ('https://blog.hubspot.com/marketing/rss.xml'),
+                                        ('https://blog.humblebundle.com/rss'),
+                                        ('https://cdeacf.ca/flux/actualites/tous/rss.xml'),
+                                        ('https://contentmarketinginstitute.com/feed/'),
+                                        ('https://cucumber.gigidigi.com/feed/'),
+                                        ('https://feedpress.me/mozblog'),
+                                        ('https://feeds.aps.dz/aps-algerie'),
+                                        ('https://feeds.arstechnica.com/arstechnica/index/'),
+                                        ('https://feeds.bbci.co.uk/news/rss.xml'),
+                                        ('https://feeds.bbci.co.uk/news/world/rss.xml'),
+                                        ('https://feeds.feedburner.com/AirJournal'),
+                                        ('https://feeds.feedburner.com/phoenixjp/YQNY?format=xml'),
+                                        ('https://feeds.gawker.com/gizmodo/full'),
+                                        ('https://feeds.gawker.com/kotaku/full'),
+                                        ('https://feeds.gawker.com/lifehacker/full'),
+                                        ('https://feeds.hanselman.com/ScottHanselman'),
+                                        ('https://feeds.howtogeek.com/HowToGeek'),
+                                        ('https://feeds.macrumors.com/MacRumors-All'),
+                                        ('https://feeds.reuters.com/reuters/businessNews'),
+                                        ('https://feeds.reuters.com/reuters/technologyNews'),
+                                        ('https://feeds.reuters.com/reuters/topNews'),
+                                        ('https://feeds.reuters.com/Reuters/worldNews'),
+                                        ('https://feeds2.feedburner.com/TheNextWeb'),
+                                        ('https://fr.africanews.com/feed/rss'),
+                                        ('https://fr.allafrica.com/tools/headlines/rdf/latest/headlines.rdf'),
+                                        ('https://france3-regions.francetvinfo.fr/actu/rss'),
+                                        ('https://krebsonsecurity.com/feed/'),
+                                        ('https://m.signalvnoise.com/feed'),
+                                        ('https://nakedsecurity.sophos.com/feed/'),
+                                        ('https://news.ycombinator.com/rss'),
+                                        ('https://rss.framasoft.org/'),
+                                        ('https://sethgodin.typepad.com/seths_blog/atom.xml'),
+                                        ('https://thepunchlineismachismo.com/feed'),
+                                        ('https://waitbutwhy.com/feed'),
+                                        ('https://www.20minutes.fr/feeds/rss-une.xml'),
+                                        ('https://www.7sur7.be/rss.xml'),
+                                        ('https://www.abandonware-france.org/rss/'),
+                                        ('https://www.actu-environnement.com/flux/rss/environnement/'),
+                                        ('https://www.actugaming.net/feed/'),
+                                        ('https://www.ademe.fr/rss-actualites'),
+                                        ('https://www.amnesty.be/spip.php?page=backend'),
+                                        ('https://www.androidpolice.com/feed/'),
+                                        ('https://www.arabesque.tn/fr/rss'),
+                                        ('https://www.arcrachatcredits.org/rss.php'),
+                                        ('https://www.assurland.com/rss/Assurland.xml'),
+                                        ('https://www.bruxelles2.eu/feed/'),
+                                        ('https://www.cbanque.com/actu/rss.php'),
+                                        ('https://www.challenges.fr/rss.xml'),
+                                        ('https://www.courrierinternational.com/feed/all/rss.xml'),
+                                        ('https://www.dhnet.be/rss.xml'),
+                                        ('https://www.dumbingofage.com/feed/'),
+                                        ('https://www.emploi-environnement.com/rss.xml'),
+                                        ('https://www.emploitheque.org/rss/rss-emploi-fonction-publique.xml'),
+                                        ('https://www.engadget.com/rss.xml'),
+                                        ('https://www.entrepreneur.com/topic/marketing.rss'),
+                                        ('https://www.extralife.fr/feed'),
+                                        ('https://www.france24.com/fr/rss'),
+                                        ('https://www.francebleu.fr/rss/a-la-une.xml'),
+                                        ('https://www.francesoir.fr/rss.xml'),
+                                        ('https://www.futura-sciences.com/rss/actualites.xml'),
+                                        ('https://www.gameblog.fr/rss.php'),
+                                        ('https://www.gamekult.com/feed.xml'),
+                                        ('https://www.gamekyo.com/news.xml'),
+                                        ('https://www.giantitp.com/comics/oots.rss'),
+                                        ('https://www.gunnerkrigg.com/rss.xml'),
+                                        ('https://www.insee.fr/fr/flux/10'),
+                                        ('https://www.jeuxactu.com/rss/ja.rss'),
+                                        ('https://www.jeuxvideo.com/rss/rss.xml'),
+                                        ('https://www.lavie.fr/actualite/rss.xml'),
+                                        ('https://www.lecese.fr/rss/flux/article'),
+                                        ('https://www.lefigaro.fr/rss/figaro_flash-actu.xml'),
+                                        ('https://www.lessentiel.lu/rss/front.tmpl'),
+                                        ('https://www.linfokwezi.fr/feed/'),
+                                        ('https://www.lopinion.fr/rss.xml'),
+                                        ('https://www.mediaterre.org/xml/home.xml'),
+                                        ('https://www.notre-planete.info/services/affiliation.php'),
+                                        ('https://www.nytimes.com/services/xml/rss/nyt/Business.xml'),
+                                        ('https://www.polygon.com/rss/index.xml'),
+                                        ('https://www.ricaner.com/?format=feed&type=rss'),
+                                        ('https://www.schneier.com/blog/atom.xml'),
+                                        ('https://www.smashingmagazine.com/feed/'),
+                                        ('https://www.smbc-comics.com/rss.php'),
+                                        ('https://www.theverge.com/rss/index.xml'),
+                                        ('https://www.vox.com/rss/index.xml'),
+                                        ('http://blog.uncommonsensesecurity.com/feeds/posts/default'),
+                                        ('http://feeds.mashable.com/Mashable'),
+                                        ('http://feeds.nature.com/nature/rss/current'),
+                                        ('http://feeds.searchengineland.com/searchengineland'),
+                                        ('http://rss.allocine.fr/ac/actualites/actupeople'),
+                                        ('http://rss.cnn.com/rss/cnn_topstories.rss'),
+                                        ('http://rss.slashdot.org/Slashdot/slashdot'),
+                                        ('http://www.9emeart.fr/9emeart.rss'),
+                                        ('http://www.arcfn.com/feeds/posts/default'),
+                                        ('http://www.economiematin.fr/flux/alaune.xml'),
+                                        ('http://www.f1rstemploi.com/feed.firstemploi.php?pid=177'),
+                                        ('http://www.fugitif.net/rss/if.xml'),
+                                        ('https://addxorrol.blogspot.com/feeds/posts/default'),
+                                        ('https://adsecurity.org/?feed=rss2'),
+                                        ('https://bitcoin.stackexchange.com/feeds/month'),
+                                        ('https://blog.cloudflare.com/rss/'),
+                                        ('https://blog.cmpxchg8b.com/feeds/posts/default'),
+                                        ('https://blog.cognitivedissidents.com/feed/'),
+                                        ('https://blog.dragonsector.pl/feeds/posts/default'),
+                                        ('https://blog.erratasec.com/feeds/posts/default'),
+                                        ('https://blog.jetbrains.com/feed/'),
+                                        ('https://blog.securityonion.net/feeds/posts/default'),
+                                        ('https://blog.trailofbits.com/feed'),
+                                        ('https://blog.trailofbits.com/feed/'),
+                                        ('https://blog.zimperium.com/feed/'),
+                                        ('https://carriere.dassault-aviation.com/handlers/offerRss.ashx?LCID=1036'),
+                                        ('https://casecurity.org/feed'),
+                                        ('https://cdn-elle.ladmedia.fr/var/plain_site/storage/flux_rss/fluxToutELLEfr.xml'),
+                                        ('https://cheekmagazine.fr/feed/'),
+                                        ('https://cinema.jeuxactu.com/cinema.rss'),
+                                        ('https://console-cowboys.blogspot.com/feeds/posts/default'),
+                                        ('https://crypto.stackexchange.com/feeds/month'),
+                                        ('https://css-tricks.com/feed/'),
+                                        ('https://dankaminsky.com/feed'),
+                                        ('https://emploi.categorynet.com/emploi/emplois-presse-france?format=feed&type=rss'),
+                                        ('https://emploi.cnrs.fr/Rss/Offres.ashx'),
+                                        ('https://feed.ipspace.net/blog/'),
+                                        ('https://feeder.co/blog.rss'),
+                                        ('https://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks'),
+                                        ('https://feeds.feedburner.com/acs/jacsat'),
+                                        ('https://feeds.feedburner.com/agoravox/gEOF'),
+                                        ('https://feeds.feedburner.com/codinghorror'),
+                                        ('https://feeds.feedburner.com/CssTricks'),
+                                        ('https://feeds.feedburner.com/Explosm'),
+                                        ('https://feeds.feedburner.com/GoogleOnlineSecurityBlog'),
+                                        ('https://feeds.feedburner.com/GustavoDuarte'),
+                                        ('https://feeds.feedburner.com/HighScalability'),
+                                        ('https://feeds.feedburner.com/insideintercom'),
+                                        ('https://feeds.feedburner.com/IrongeeksSecuritySite'),
+                                        ('https://feeds.feedburner.com/lesmobiles'),
+                                        ('https://feeds.feedburner.com/Liquidmatrix'),
+                                        ('https://feeds.feedburner.com/maison-actus'),
+                                        ('https://feeds.feedburner.com/Moserware'),
+                                        ('https://feeds.feedburner.com/oatmealfeed'),
+                                        ('https://feeds.feedburner.com/pauldotcom/XBIC'),
+                                        ('https://feeds.feedburner.com/RaffysComputerSecurityBlog'),
+                                        ('https://feeds.feedburner.com/satwcomic'),
+                                        ('https://feeds.feedburner.com/seriouseatsfeaturesvideos'),
+                                        ('https://feeds.feedburner.com/SteveGibsonsBlog'),
+                                        ('https://feeds.feedburner.com/Techcrunch'),
+                                        ('https://feeds.feedburner.com/TEDTalks_video'),
+                                        ('https://feeds.feedburner.com/tenable/qaXL'),
+                                        ('https://feeds.feedburner.com/yozone'),
+                                        ('https://feeds.mashable.com/Mashable'),
+                                        ('https://feeds.nature.com/nature/rss/current'),
+                                        ('https://feeds.searchengineland.com/searchengineland'),
+                                        ('https://feeds.wired.com/wired/index'),
+                                        ('https://feeds2.feedburner.com/carnegiemelloncylab'),
+                                        ('https://feeds2.feedburner.com/zscaler/research'),
+                                        ('https://googleprojectzero.blogspot.com/feeds/posts/default'),
+                                        ('https://ici.radio-canada.ca/rss/4159'),
+                                        ('https://ics.sans.org/blog/feed/'),
+                                        ('https://idoneous-security.blogspot.com/feeds/posts/default'),
+                                        ('https://ifsec.blogspot.com/feeds/posts/default'),
+                                        ('https://insights.sei.cmu.edu/devops/rss.xml'),
+                                        ('https://isc.sans.edu/rssfeed_full.xml'),
+                                        ('https://java.developpez.com/index/rss'),
+                                        ('https://krebsonsecurity.com/feed'),
+                                        ('https://lifehacker.com/tag/security/rss'),
+                                        ('https://martinfowler.com/feed.atom'),
+                                        ('https://networkengineering.stackexchange.com/feeds/month'),
+                                        ('https://networkjutsu.com/feed/'),
+                                        ('https://news.un.org/feed/subscribe/fr/news/all/rss.xml'),
+                                        ('https://pevma.blogspot.com/feeds/posts/default'),
+                                        ('https://postmodernsecurity.com/category/blog-posts/feed/'),
+                                        ('https://raidersec.blogspot.com/feeds/posts/default'),
+                                        ('https://research.kudelskisecurity.com/feed/'),
+                                        ('https://room362.com/index.xml'),
+                                        ('https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml'),
+                                        ('https://rss.packetstormsecurity.com/news/tags/hacker/'),
+                                        ('https://rss.slashdot.org/Slashdot/slashdot'),
+                                        ('https://seclists.org/rss/microsoft.rss'),
+                                        ('https://seclists.org/rss/pen-test.rss'),
+                                        ('https://security.stackexchange.com/feeds/week'),
+                                        ('https://slate.com/feeds/news-and-politics.rss'),
+                                        ('https://slate.com/feeds/technology.rss'),
+                                        ('https://techblog.netflix.com/feeds/posts/default'),
+                                        ('https://the-parallax.com/feed/'),
+                                        ('https://threatpost.com/feed'),
+                                        ('https://unix.stackexchange.com/feeds/month'),
+                                        ('https://volatility-labs.blogspot.com/feeds/posts/default'),
+                                        ('https://www.1jour1actu.com/feed'),
+                                        ('https://www.404works.com/fr/projects/index.rss'),
+                                        ('https://www.abcbourse.com/rss/displaynewsrss.aspx'),
+                                        ('https://www.acrimed.org/spip.php?page=backend'),
+                                        ('https://www.actusnews.com/fr/rss'),
+                                        ('https://www.al-kanz.org/feed/'),
+                                        ('https://www.alternatives-economiques.fr/rss.xml'),
+                                        ('https://www.audiocite.net/news.xml'),
+                                        ('https://www.avoir-alire.com/spip.php?page=backend'),
+                                        ('https://www.awkwardzombie.com/awkward.php'),
+                                        ('https://www.beauxarts.com/feed/'),
+                                        ('https://www.bfmtv.com/rss/info/flux-rss/flux-toutes-les-actualites/'),
+                                        ('https://www.cfnews.net/rss/feed/actualite'),
+                                        ('https://www.challenges.fr/emploi/rss.xml'),
+                                        ('https://www.cinechronicle.com/feed/'),
+                                        ('https://www.cinemateaser.com/feed'),
+                                        ('https://www.cinenews.be/fr/feed/rss/'),
+                                        ('https://www.cineserie.com/feed/'),
+                                        ('https://www.cisecurity.org/feed/advisories'),
+                                        ('https://www.connaissancedesarts.com/feed/'),
+                                        ('https://www.corelan.be/index.php/feed'),
+                                        ('https://www.critique-film.fr/feed/'),
+                                        ('https://www.daemon-security.com/rss2.xml'),
+                                        ('https://www.daemonology.net/blog/index.rss'),
+                                        ('https://www.economie.gouv.fr/rss/toutesactualites'),
+                                        ('https://www.eff.org/rss/updates.xml'),
+                                        ('https://www.elastic.co/blog/feed'),
+                                        ('https://www.elwatan.com/feed'),
+                                        ('https://www.europe1.fr/rss/actualites.xml'),
+                                        ('https://www.f1rstemploi.com/feed.firstemploi.php?pid=177'),
+                                        ('https://www.francetvinfo.fr/titres.rss'),
+                                        ('https://www.frandroid.com/feed'),
+                                        ('https://www.generation-nt.com/export/rss.xml'),
+                                        ('https://www.hexblog.com/?feed=rss2'),
+                                        ('https://www.imperialviolet.org/iv-rss.xml'),
+                                        ('https://www.informationisbeautiful.net/blog/feed/'),
+                                        ('https://www.journaldesfemmes.fr/rss/'),
+                                        ('https://www.journalduhacker.net/rss'),
+                                        ('https://www.journaldunet.com/rss/'),
+                                        ('https://www.keepitsimple.fr/feed/'),
+                                        ('https://www.laquotidienne.fr/feed/'),
+                                        ('https://www.leblogducinema.com/feed/'),
+                                        ('https://www.lefigaro.fr/rss/figaro_cinema.xml'),
+                                        ('https://www.lefigaro.fr/rss/figaro_voyages.xml'),
+                                        ('https://www.lejournaldesarts.fr/rss.xml'),
+                                        ('https://www.lemonde.fr/rss/une.xml'),
+                                        ('https://www.lvh.io/rss.xml'),
+                                        ('https://www.maxoe.com/feed/'),
+                                        ('https://www.melty.fr/cinema-2.rss'),
+                                        ('https://www.motomag.com/spip.php?page=choixdesredactions'),
+                                        ('https://www.multicollection.fr/spip.php?page=backend'),
+                                        ('https://www.nouvelobs.com/voyage/rss.xml'),
+                                        ('https://www.npr.org/rss/rss.php?id=1001'),
+                                        ('https://www.nytimes.com/services/xml/rss/nyt/HomePage.xml'),
+                                        ('https://www.ozap.com/rss'),
+                                        ('https://www.paranatural.net/comic/rss'),
+                                        ('https://www.paranatural.net/rss.php'),
+                                        ('https://www.paris-art.com/photo/feed/'),
+                                        ('https://www.paris-normandie.fr/rss/accueil.xml'),
+                                        ('https://www.pentestgeek.com/feed'),
+                                        ('https://www.photoreview.fr/feed/'),
+                                        ('https://www.premiere.fr/rss/actu-cinema'),
+                                        ('https://www.purepeople.com/rss/news_t0.xml'),
+                                        ('https://www.quotidiendutourisme.com/rss.xml'),
+                                        ('https://www.reddit.com/r/AskCulinary/.rss'),
+                                        ('https://www.reddit.com/r/Games/top/.rss'),
+                                        ('https://www.reddit.com/r/technology/.rss'),
+                                        ('https://www.reddit.com/r/worldnews/top/.rss'),
+                                        ('https://www.repimmo.com/immobilier.rss'),
+                                        ('https://www.resmusica.com/feed/'),
+                                        ('https://www.routard.com/_/Layout_Routard_Mag_Rubrique/RSSActus'),
+                                        ('https://www.saphirnews.com/xml/syndication.rss'),
+                                        ('https://www.sciencesetavenir.fr/rss.xml'),
+                                        ('https://www.securelist.com/en/rss/analysis'),
+                                        ('https://www.securelist.com/en/rss/blog'),
+                                        ('https://www.skullsecurity.org/blog/feed'),
+                                        ('https://www.techniques-ingenieur.fr/actualite/articles/feed/'),
+                                        ('https://www.trip-hop.net/rss-chroniques.xml'),
+                                        ('https://www.trustedsec.com/feed'),
+                                        ('https://www.turbo.fr/global.xml'),
+                                        ('https://www.universdescomics.com/feed/'),
+                                        ('https://www.us-cert.gov/ncas/alerts.xml'),
+                                        ('https://www.voltairenet.org/spip.php?page=backend&id_secteur=1110&lang=fr'),
+                                        ('https://www.weekly.fr/feeds/weeklyfeed.aspx'),
+                                        ('https://www.willhackforsushi.com/?feed=rss2'),
+                                        ('https://www.wired.com/feed'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCVwG9JHqGLfEO-4TkF-lf2g'),
+                                        ('https://www.zdnet.fr/feeds/rss/'),
+                                        ('https://xkcd.com/atom.xml'),
+                                        ('https://www.africatopsports.com/feed/'),
+
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC_nLL-HLwQZ3Vcwo5Gz3sOA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCOoJkGYV00nr3EpZOUeuN1Q'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCT2gu7nNy_M16-j1oVFjwxw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCTqj9i8UpCNXRMcPNuWhocQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCMhvtIOnGRmmOK--1Dj5bwQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCRfV0887xNMIoxFPCewLZxA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCpXDdK8I8-4vqSMTf_5h6FA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCff7xW0xu_YALNX1duvrECQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCa3TXR0vxlj4uKgQNTvXAHw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC72Zm-H5Bx3-iGU7YzohF1Q'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCTTLtDdRUXxDTjQOR_M-mzg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCr5lOCcjZzNprLrhxO0WZQw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCkzaUOrknV-uv8d8r0q8BlQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC6nvw2BnNYSKQoffXQtxICQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCYVvDb92uroY7kyJcWy6zdA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCJxZIKUH5ULovXd5phFMzxA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC3MIXkWlQAvzQLa3ALbSqhg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCQOQCfdk8ZXdGOlpuYsu3qA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCXUjtTfQWJa0G9K_SqRm3jQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC8aiILPy0NO5wwLaYEzImbw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCqrILQNl5Ed9Dz6CGMyvMTQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCzuaB4F2znrMggxcwUuVhAw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCiHVTkJtWSdc9N3h0nUGWLg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCsVPQfo5RZErDL41LoWvk0A'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCQPYJluYC_sn_Qz_XE-YbTQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC29ju8bIPH5as8OGnQzwJyA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCYt1sfh5464XaDBH0oH_o7Q'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCvjgXvBlbQiydffZU7m1_aw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCbx0SPpWT6yB7_yY_ik7pmg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCWN3xxRkmTPmbKwht9FuE5A'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCYWOO5aXLBMjCjR_UR4tPWg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCJ6q9Ie29ajGqKApbLqfBOg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCY_guo_AYBs0cIkeMVc16iw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC2nWAezYQUGkAaixxmFayBA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCS2e0hEJMhwd6bNscS60xTg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCefQC4Y-X9MBRuYBKc2waiQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UChIs72whgZI9w6d6FhwGGHA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCT-nPlVzJI-ccQXlxjSvJmw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCFTM1FGjZSkoSPDZgtbp7hA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UClLXKYEEM8OBBx85DOa6-cg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCCBVCTuk6uJrN3iFV_3vurg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UChlTcWDE8gd4tsl_L727NrQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC8butISFwT-Wl7EV0hUK0BQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCXgGY0wkgOzynnHvSEVmE3A'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC7yfnfvEUlXUIfm8rGLwZdA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC_x5XG1OV2P6uZZ5FSM9Ttw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCZ6xBOQPbtKUoo_zxdC5_Uw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCJbPGzawDH1njbqV-D5HqKw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCCwIYNpQVHZTd3Vx_krnmdA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCMsgfv3vRBTAo_dXVVyiNMQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCGp4UBwpTNegd_4nCpuBcow'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC9X2RcKN4UUsrFolU04iuTQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCIJTq0nGrgkGMy1xJL_YppQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC7c3Kb6jYCRj4JOHHZTxKsQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCVyRiMvfUNMA1UPlDPzG5Ow'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCQ74G2gKXdpwZkXEsclzcrA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCatItl6C7wJp9txFMbXbSTg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC7_X0WkMtkWzaVUKF-PRBNQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCYgItq72oMDKAh907gI4B8A'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCUYE2BOuLvwWvjPm2BrhVrg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC3qG9j4cEP_9atRd0fL45Iw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC5DmsBrVi62DWBASLK5gMEw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCRnOndjtocbvtOprmhttD7w'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UChhPkjgG1-iLUOmURGdgQrw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCx83f-KzDd3o1QK2AdJIftg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCPCaivRomteeYizokohiYRQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCVHFbqXqoYvEWM1Ddxl0QDg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC0FPjuZLQ16UpvLtbs6LYpg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCinwr83yWE5zviIznsXZg7g'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCQsVmhSa4X-G3lHlUtejzLA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCUhC407CDrzMpRwB6UFH1XA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCSJbGtTlrDami-tDGPUV9-w'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCSIvrn68cUk8CS8MbtBmBkA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCoebwHSTvwalADTJhps0emA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC6vfGtsJr5RoBQBcHg24XQw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCrXb8NaMPQCQkT8yMP_hSkw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCWh3G9LZmZ3q_xWOyPpn8ag'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC1KmNKYC1l0stjctkGswl6g'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC1ZadBAsgOgD0eo2R3JTgNA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCtxCXg-UvSnTKPOzLH4wJaQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCuP2vJ6kRutQBfRmdcI92mA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCwqC1-y3uk5Zfg6F5S_PcVw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCDSbqKhAoWZARlWAPbf88rg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCafC_t6vc3mQ2QrTD47iPJQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCUq7r8ZgJiTIVhJDFTzypNw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCnMGQ8QHMAnVIsI3xJrihhg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCnMfZM2S3QgbFvOyet5PMmQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC8CB0ZkvogP7tnCTDR-zV7g'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCT0bL2CQIk1eANeXk57mxaA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCzFa1bUqK0m4vIs6wUprHKA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCvA_wgsX6eFAOXI8Rbg_WiQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCeDh9omC_xMKrar2srQZiLg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC8YZisI1NvL_0PLk4P7sCKA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCD-oRwqVTRDBhj9pmYM-jYg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCzoVCacndDCfGDf41P-z0iA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCxmt6jF82-w5dzO8G9_v34w'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCCgliN1n-OaiYJbZV8gypNA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCnJKrxHZ_AOhmiWjFWS3eEQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCP_lo1MFyx5IXDeD9s_6nUw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCRRQZZz52tgqlcZNKqMkTGQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCkuE-53xmV8vRD0ffU30Nvg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCup6HO-SzecegEpxtB6XKjw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCxwjsTzd1VERDpl-QGH2jJA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC61WvgRpe-whU-1j4hvhdFw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UChCDYcBCrb8tuPAO6e0P-Hw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCxbes4ceM-dPIToYWLqmYKg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCCzfEV7NDD5OvkE3Ua7pcxQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC6D58UvAH98IaMVZr80-03g'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCLdVmxwj9dQqM8tJJp2LYGw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCmRtPmgnQ04CMUpSUqPfhxQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCSRhwaM00ay0fasnsw6EXKA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC76AVf2JkrwjxNKMuPpscHQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCVlyyvH7PK5NT6ZdCGS3zVQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC1hxnWLIFXZP9GYooUPOvvw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCHHLuRrrzxCwVk0-YO8J2PA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCXh7ir_sZ8TH2-RIfMXS3Yw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCterU64tuSSUUyPZh4qSKzQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCuGmhP1MSz82hkR1jpJ_F5w'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCej18QqbZDxuYxyERPgs2Fw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCR179fwPGUwfD2XnyA86VgQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCSxk_CUfES4ly5Sspc0Vorw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCey4kFOQbGLN0xZKeBbncdA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCUCSysJ_Dq9_8DnKHsyKJFg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCYw2WaRppPoxPBaleUV4WmA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCm9iiIfgmVODUJxINecHQkA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCbn1OgGei-DV7aSRo_HaAiw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCVTlvUkGslCV_h-nSAId8Sw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCEGUP3TJJfMsEM_1y8iviSQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC-p2D0zAko5TrssP07K7oOA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCtnKwv0cq_aiMSZ2dqJBHHg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCx2DTEDPLZCCqRgA76MwxrQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC9umslutqOiMgSLXgBRSYkA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCxY1hl1y2gjNtYFWQ5GW9UA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCTH6sh7LtZ6PON-8I5WyyMQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCOiFaAc2gVdm_hpY_HH3-tA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCVpSUJwWxCUOwg_deEN3UGg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCBBAW5Va0alUBpmW3XfCT7Q'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCgOuqWtebyCoyTOtRQ0UQ_w'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCYHiZDU0YLN0dWLWSCP1JYQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCv_yD4molCUXenEk-Oaql1g'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCYxgidQYV3WPD0eeVGOgibg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCb-D560WkMEPE7dwNta_nqA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCLDJ_V9KUOdOFSbDvPfGBxw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UC5ZYNAMK9jCtQEBY6lvsL4g'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCFFLP0dKesrKWccYscdAr9A'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCBRNlyf9lURksAEnM-pyQdA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCl6TwuDRf0yuC5XkzohFGlw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCrqTcWee3VRJh906JygWrTw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCJU2r634VNPeCRug7Y7qdcw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCK4ji45I-zxeWXAFKmu3p6Q'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCSrF0EaOCpO7WC9BBSXx0Qw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCL8ZULXASCc1I_oaOT0NaOQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCNrwxv3m8_v-rAV8DkSPorg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCfX55Sx5hEFjoC3cNs6mCUQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCO4RPUkZ9H30QG3kNdaHJEQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCmOZ2Zv6_KbjciarRWuq4qQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCviUBRP45keBiAwuYEi2GmQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCtlqM5PZAHCimpEfL-OFgqg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCjyzh404cnb1OlEFV3olnDA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCwRXb5dUK4cvsHbx-rGzSgw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCPk-B12i_mUuB8RsS8zRE9w'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCnAdXkr17iQS8YcYl0LhPdw'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCKR17K_qIen0A_4zit-wm4Q'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCZa8sscFZ9-LOYl94pzd_aA'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCKoWnd8iWhkFWd_u2v-iIyQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCmJcrJ_30p6s_OTbyTFfbqQ'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCpi0MkJ23w83bHpxA4ZvGFg'),
+                                        ('https://www.youtube.com/feeds/videos.xml?channel_id=UCDanUAyFkR-GLwN0SdTdadw');]]></sql>
+    </changeSet>
+    <changeSet id="ahldikr" author="hmd">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>INSERT INTO channel (channel_link) values
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCXdM9MY27TnNNrbEeRU099w'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCASAOTD6fMPEg8jmO4nPblQ'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCikKBeXeC90S8NJsoXLr9Ng'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCGQbOgvYf1sYCm4eIRCis5A'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCIaIbcAXwje282jns5SAqyQ'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCm9ZIIayNLgrHjQ09jB_DFQ'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCuVazfebd5t5cVzq-6b-8mQ'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCuo5Sm8q6_tthlgIhG8JG5A'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCJCCaav4pGe9rp9kgL6Xlfg'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCXVLUc79rqn3tawq9erDGvw'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCRKvOv2RjbmHWCJLbIoVjFA'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCOXVvr5IrJ-Lk_bIvY_UPtg'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCYSLAzXskCsx8QwUr-X4yqA'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UChdeAO0naFewi8leXaCquOQ'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UC-PTiHEZnsponbqlmRIxfpw'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCerXlrgEFG_W0s4pi8wztDg'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCnVGseMUtv2yFNC-dQ2JdSw'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UChu58fbuG4Uepdr6tjrUGTw'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCifZUETjBgcsFaS-ewfb3YQ'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCcjFQDQ1g993Douu7RCK1OQ'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCum7DSqLYPc23jsyds-X97Q'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCSe5jomgbdEuMHhXhLdsXJA'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UC86Jb9qHRu2s9OHTFwAS7ww'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCKUOmGXE9Ytlc2EzpGqimtw'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UC1M1X344ssYjSvjAXM0Rn2Q'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCGeNnbrPXNJb5wfUfdjaWag'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCTRGcT1KQVoQA1vdNLlbjhw'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCtXGrPGVWFTsfn61MBx4t1g'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCJnkGFAByIXrAGdLJFglgfw'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCF9Hx3hIbZoTT0Sf7Cw1XZQ'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCdhBef7A9ilNrCmO8pf9LhA'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCjv6T8oa91ofNq2_u0yIBzQ'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCK0bHMvAlVL8NvyofiMulUw'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCz6xb6fI3EBzPoRuTrkbBmQ'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCTH6OW7ZlH7LfKJtcWMOGAg'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCE5E6AZht4k8Wj49QQKwy-g'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UC_nqVsSwqxUPCawqncGqfAw'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCxx-W7y5qIoFKHp7W-Efhcw'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UC56KbmJAmeyD8ZVv04JSTSA'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCpPZKwayH_pWPF20Ls0hgVw'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCp8jgoVFF1IlDFa58Kwc8Tw'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCh27ui808a-K5uqxPY_5bQQ'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCLg9AjalIAydPJjWkEv3lcg'),
+                                                    ('https://www.youtube.com/feeds/videos.xml?channel_id=UCaNS3on9m_7LmSpI2GC65Bw');</sql>
+    </changeSet>
+    <changeSet id="ahldikr-2" author="hmd-2">
+        <validCheckSum>ANY</validCheckSum>
+        <sql>INSERT INTO channel (channel_link) values
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCeM3H72v5rzf_4J5aZV8BmQ'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UClf4BTEySRAQhnkQvJh6l8w'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCiODKYQ3kBc-r9I8qO-TiTA'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCHyhnGb85wXjxGI761LFyMw'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCCk5fA87YT4ic-6oGwE5zMQ'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCf5vl3vN4zU2NSdcL-3Z5Nw'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCcZ0CH4XPXsHOlhpKodRAaw'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCZuXNhk_DnlAqnH3Y-_s7OA'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCK4rbjjIfbt4tETgWEIWGSQ'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCijSEIUA72pyzSNOf_lx5ng'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UC43bHWI3eZwfxOONWdQBi-w'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCdwmI3CAhNtmtr2Q8n44tlA'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCjyXBSesTyRhwPfDrahfG5Q'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCEtzpou7x4iq1r8PxSAcZxQ'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCtF3YygTiodnYSw8vD3UJtQ'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCKIwebGTgmInYWFR4PD08yg'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCS-XgiMGKaiQsZNkgwsDbYg'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCcM59Ojgp2Qp63G4FV4NAcA'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UC-wxTuufjbzJ6O9iN57iy6Q'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UC9Kbm1zEwFdUZRxb-1_SG_A'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCvE2vYXCXJ1HunzxhscxstA'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCAvaKJHIGJbyzdMwPMSm4pA'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCiKCehFH5vqgmptTOhEcUsA'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCF83W-k05x_orMGGDDlW7zw'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UC4x1CiTfDI4KvTsFllAH4Tg'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCGOJXcJxooXjnMEOSga6upw'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCQjPV9wQW0k2jCpkPiRXRDA'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UC4zY41mpQTXoNPXYgIx2ZnQ'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UC82jxtQUWykqu_YwkBkAXYg'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCWjCSGhmSGu0VLf2mPFS0Kg'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCZ6JhumlYZ6conh6u7KIvFw'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UC37F6aVzWEqvZEMl3ohugDA'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UC7t5zlm09M0ObyGLS9x4EEQ'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCb0T-Wf2lLGIIWFJ-lV8SpA'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCgi0FKLn_P3dAyX-B7Ce6SA'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCs7NCplXMbNvS1mWbePiKpQ'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCZLI4rPJG20tSbAi3UVyJHQ'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCZAgn0FRx0ZZR-2UrdD_NNg'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCh24du1VUAULxTeMT5dmr6g'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCmhCbvSrj9yRiGkUIzK_XIQ'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCJqTlkXJJOyrFjijJSXv10g'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCDcbVBEM4JKECBUBfzz38_g'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UC3BpiYSPccUZI0yff6-jHtg'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCaD-VLP3iTAmqBvMAbSJd2A'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCrZ3UtzbXNYVl4r2a0xJGxQ'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCr3zt96slzXB5wuUARG1xdQ'),
+                                          ('https://www.youtube.com/feeds/videos.xml?channel_id=UCbxJj-YKCE6Nfe9FcsP698A');
+        </sql>
     </changeSet>
 
 </databaseChangeLog>
